@@ -10,8 +10,8 @@ const { httpGet } = require("./mock-http-interface");
  *    - If the HTTP request fails (any status code other than 200), the key is "FAILURE" and the value is the error message.
  *
  * @async
- * @param {string[]} urls - an array of URLs to fetch quotes from.
- * @returns {Promise<Array<{ 'Arnie Quote': string } | { 'FAILURE': string }>>}
+ * @param {GetArnieQuotesInput} urls - an array of URLs to fetch quotes from.
+ * @returns {ArnieQuoteResponse} - a promise that resolves to an array of objects containing the quotes or error messages.
  */
 const getArnieQuotes = async (urls) => {
   return Promise.all(
